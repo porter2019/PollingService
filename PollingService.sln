@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Litdev.Service", "Litdev.Service\Litdev.Service.csproj", "{97C62B55-B481-4CFA-B76C-220435A4E5CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Litdev.MongoDB", "Litdev.MongoDB\Litdev.MongoDB.csproj", "{043065D4-BA1F-4531-A7B5-7E983BAE4757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Litdev.Tools", "Litdev.Tools\Litdev.Tools.csproj", "{EDA14228-16E7-4CC3-9436-BA5D1599DCD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Litdev.Tests", "Litdev.MongoDBTests\Litdev.Tests.csproj", "{33AAA61C-FBF3-4619-905C-B713F6CE634E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97C62B55-B481-4CFA-B76C-220435A4E5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C62B55-B481-4CFA-B76C-220435A4E5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C62B55-B481-4CFA-B76C-220435A4E5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C62B55-B481-4CFA-B76C-220435A4E5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043065D4-BA1F-4531-A7B5-7E983BAE4757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043065D4-BA1F-4531-A7B5-7E983BAE4757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043065D4-BA1F-4531-A7B5-7E983BAE4757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043065D4-BA1F-4531-A7B5-7E983BAE4757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA14228-16E7-4CC3-9436-BA5D1599DCD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA14228-16E7-4CC3-9436-BA5D1599DCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA14228-16E7-4CC3-9436-BA5D1599DCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA14228-16E7-4CC3-9436-BA5D1599DCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33AAA61C-FBF3-4619-905C-B713F6CE634E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33AAA61C-FBF3-4619-905C-B713F6CE634E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33AAA61C-FBF3-4619-905C-B713F6CE634E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33AAA61C-FBF3-4619-905C-B713F6CE634E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
