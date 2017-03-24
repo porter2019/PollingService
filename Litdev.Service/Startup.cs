@@ -16,7 +16,10 @@ namespace Litdev.Service
         {
             // Configure Web API for self-host.
             HttpConfiguration config = new HttpConfiguration();
-            config.MessageHandlers.Add(new APIAuthenticationHandler());
+            config.MapHttpAttributeRoutes();
+
+            //接口基础验证
+            //config.MessageHandlers.Add(new APIAuthenticationHandler());
             var jsonFormatter = new JsonMediaTypeFormatter();
             jsonFormatter.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd hh:mm:ss" });
             config.Services.Replace(typeof(IContentNegotiator), new JsonContentNegotiator(jsonFormatter));
@@ -26,9 +29,7 @@ namespace Litdev.Service
             name: "DefaultApi",
             routeTemplate: "api/{controller}/{id}",
             defaults: new { id = RouteParameter.Optional }
-            );
-            // 启用属性路由(PS原文有些错误，启用属性路由必须往后放，不然报错)
-            config.MapHttpAttributeRoutes();
+            );            
             app.UseWebApi(config);
         }
     }
@@ -64,6 +65,7 @@ namespace Litdev.Service
             model.msgbox = actionExecutedContext.Exception.Message;
             model.data = "";
             actionExecutedContext.Response = actionExecutedContext.Request.CreateResponse(HttpStatusCode.OK, model);
+            System.Diagnostics.Trace.WriteLine(model.msgbox);
             base.OnException(actionExecutedContext);
         }
     }

@@ -13,15 +13,15 @@ namespace Litdev.MongoDB
     {
         #region 属性字段
 
-        private string entitysname;
+        private string collectionname;
 
         /// <summary>
         /// 集合名称
         /// </summary>
-        public string entitysName
+        public string collectionName
         {
-            get { return entitysname; }
-            set { entitysname = value; }
+            get { return collectionname; }
+            set { collectionname = value; }
         }
 
         #endregion
@@ -34,7 +34,7 @@ namespace Litdev.MongoDB
         /// <param name="collectionName"></param>
         public BaseDAL(string collectionName)
         {
-            this.entitysname = collectionName;
+            this.collectionname = collectionName;
         }
 
         public T obj;
@@ -105,7 +105,7 @@ namespace Litdev.MongoDB
         public virtual IMongoCollection<T> GetCollection()
         {
             var database = CreateDatabase();
-            return database.GetCollection<T>(this.entitysName);
+            return database.GetCollection<T>(this.collectionName);
         }
 
         /// <summary>

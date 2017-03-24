@@ -12,7 +12,7 @@ namespace Litdev.MongoDB
     {
         public DALDemo()
         {
-            this.entitysName = "demo";
+            this.collectionName = "demo";
         }
 
 

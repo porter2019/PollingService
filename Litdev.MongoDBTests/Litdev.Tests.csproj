@@ -70,6 +70,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MongoDBTest.cs" />
+    <Compile Include="ShiDaiTest.cs" />
+    <Compile Include="QueueTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Litdev.MongoDB\Litdev.MongoDB.csproj">

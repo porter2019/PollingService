@@ -21,7 +21,7 @@ namespace Litdev.Service
         /// <summary>
         /// Web API使用的端口
         /// </summary>
-        public static readonly int WebAPIPort = TypeHelper.ObjectToInt(ConfigurationManager.AppSettings["WebAPIPort"].ToString());
+        public static readonly string WebAPIURL = ConfigurationManager.AppSettings["WebAPIURL"].ToString();
 
         /// <summary>
         /// MongoDB连接字符串

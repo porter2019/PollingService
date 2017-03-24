@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Litdev.MongoDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Web.Http;
 
-namespace Litdev.Service.Controller
+namespace Litdev.Service.Controllers
 {
-    public class TestController: ApiController
+    public class TestController : ApiController
     {
-        [Route("/api/test/a")]
+        [Route("api/test/a")]
         [HttpGet]
         public APIResponseEntity<string> GetInfo()
         {
@@ -18,7 +19,7 @@ namespace Litdev.Service.Controller
             APIResponseEntity<string> response_entity = new APIResponseEntity<string>();
             response_entity.msg = 1;
             response_entity.msgbox = "线程标识是：" + ss.Name;
-            
+
             return response_entity;
         }
     }

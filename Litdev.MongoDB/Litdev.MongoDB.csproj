@@ -59,8 +59,12 @@
   <ItemGroup>
     <Compile Include="DAL\BaseDAL.cs" />
     <Compile Include="DAL\DALDemo.cs" />
+    <Compile Include="DAL\DALMachine.cs" />
+    <Compile Include="DAL\DALQueue.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\EntityDemo.cs" />
+    <Compile Include="Entity\EntityMachine.cs" />
+    <Compile Include="Entity\EntityQueue.cs" />
     <Compile Include="Interface\IBaseDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

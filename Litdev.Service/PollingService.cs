@@ -28,7 +28,7 @@ namespace Litdev.Service
             Trace.Listeners.Add(new LitdevTraceListener());//添加自定义监听器
             
             //Services URI
-            string serveruri = "http://localhost:" + ServiceConfig.WebAPIPort + "/";
+            string serveruri = ServiceConfig.WebAPIURL;
             // Start OWIN host
             apiserver = WebApp.Start<Startup>(url: serveruri);
 
