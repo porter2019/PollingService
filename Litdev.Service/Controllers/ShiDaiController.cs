@@ -15,18 +15,24 @@ namespace Litdev.Service.Controllers
         /// </summary>
         /// <returns></returns>
         [Route("api/v1/sd/machine/reg")]
-        [HttpPost]
-        public APIResponseEntity<string> RegMachine([FromBody]Models.ModelRegMachine req)
+        [HttpGet]
+        public APIResponseEntity<string> RegMachine(string remark)
         {
             APIResponseEntity<string> response_entity = new APIResponseEntity<string>();
+            string mach_id = Thread.CurrentPrincipal.Identity.Name;
+            if (string.IsNullOrWhiteSpace(mach_id))
+            {
+                response_entity.msgbox = "Token需要携带机器码";
+                return response_entity;
+            }
 
-            if (string.IsNullOrWhiteSpace(req.mach_id))
+            if (string.IsNullOrWhiteSpace(mach_id))
             {
                 response_entity.msgbox = "机器码不能为空";
                 return response_entity;
             }
 
-            bool is_ok = new DALMachine().AddMachine(req.mach_id, req.remark);
+            bool is_ok = new DALMachine().AddMachine(mach_id, remark);
             if (is_ok)
             {
                 response_entity.msg = 1;
@@ -47,9 +53,21 @@ namespace Litdev.Service.Controllers
         /// <returns></returns>
         [Route("api/v1/sd/queue/list")]
         [HttpGet]
-        public APIResponseEntity<List<EntityQueue>> GetTopQueue(int top, string mach_id)
+        public APIResponseEntity<List<EntityQueue>> GetTopQueue(int top)
         {
             APIResponseEntity<List<EntityQueue>> response_entity = new APIResponseEntity<List<EntityQueue>>();
+            string mach_id = Thread.CurrentPrincipal.Identity.Name;
+            if(string.IsNullOrWhiteSpace(mach_id))
+            {
+                response_entity.msgbox = "Token需要携带机器码";
+                return response_entity;
+            }
+            if (string.IsNullOrWhiteSpace(mach_id))
+            {
+                response_entity.msgbox = "机器码不能为空";
+                return response_entity;
+            }
+
             response_entity.data = new DALQueue().GetTopQueueList(top, mach_id);
             response_entity.msg = 1;
             response_entity.msgbox = "ok";
